@@ -1,0 +1,74 @@
+/* 기본적으로 주어지는  마진10과 패딩을 없애고 시작 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*프로필 카드의 margin을 지우고 padding에 20을 주고 box-sizing:border-box걸면 마우스 스크롤 없어지고 프로필카드가 위에서 살짝 내려가게보임*/
+}
+
+body {
+  /*배경 전체에 색깔을 넣을떄 바디에 넣는 방법도 있다*/
+  background-color: indianred;
+  background: linear-gradient(purple, pink);
+  height: 100vh; /*linear-gradient를 넣었을때 화면이 나눠지는걸 통합시켜줌*/
+  padding: 20px;
+}
+.profile-card {
+  text-align: center; /*프로필 카드안에 사진 아이디 링크등이 가운데에 있기 때문에 
+  미리 걸어 놓아서 요소들의  수평을 잡는다 글씨 뿐만 아니라 img 태그도 가능 */
+  width: 320px;
+
+  border: 2px solid white;
+
+  /* 포지션을 사용할경우 이렇게 
+  position: absolute;
+  top: 20px;
+  left: 50%;
+   그런데 left:50%을 넣으면 박스의 왼쪽 모서리가 화면의 정중앙에와서 중앙이 아니게됨 그래서
+  transform: translate(-50%);  왼쪽 모서리가 나오니까 얘로 다시잡는거 뒤에서 배움*/
+
+  margin: auto;
+
+  /* margin:20px auto를 쓰면 상하로 (20px), auto 왼쪽 오른쪽 여백을 정확히 분배시켜서 요소가 중앙에 오게함*/
+  border-radius: 5%; /*모서리를 둥글게*/
+}
+/*div 백그라운드 방식.profile-image {
+  background-image: url(../../resources/bao.jpg);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 50%는 원을 만들어줌
+  background-size: cover; 얼굴을 대강  맞춰줌
+  background-position: center; 얼굴을 가운데로 조정 
+  margin: 20px auto;  상하 여백20 (위에 20만큼 아래20만큼 여백이  생김 그래서 사진이 내려간것처럼 보이고 하단에도 가상의 20여백이 생김,좌우 여백 맞춰줌*/
+
+.profile-card img/*프로필 카드 밑에 이미지*/ {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /*이미지 크기 조정으로 찌그러진 이미지의 비율을 다시 잡아줌*/
+  border-radius: 50%; /* 원은 50주면 만들어짐*/
+  margin-top: 20px; /* 위에서 20px 만큼 여백이 생겨서 내려간것처럼 보임*/
+}
+.profile-card h2 {
+  /*프로필 카드의 h2*/
+  color: white;
+  margin-top: 10px; /* 위에다 10px만큼 여백을 넣어서 내려가게*/
+}
+.profile-card a {
+  /*프로필 카드의 a태그*/
+  border: 2px solid white;
+  /*a태그는 인라인 방식이라  요소만큼만 border가 생기고 width height이 안먹혀서 블록태그로 바꿔줘야함*/
+  display: block;
+  margin: 15px; /*상하좌우 15px만큼 여백*/
+  /*margin을 쓰고 프로필카드의 height 값을 지우면 margin 값만큼 height이 생김*/
+  /* 
+  height: 40px;
+  line-height: 40px; /* line-height과 height의 동일한 값을 넣으면 수직의 정렬 */
+  padding: 12px; /*테두리와 컨텐츠 사이의 여백을 만듬 12px만큼 띄워서 글씨가 중앙에 있는것 처럼 보이게함*/
+  color: white;
+  text-decoration: none; /*하이퍼 링크 밑줄 삭제 */
+  font-weight: bold;
+}
+.profile-card a:hover {
+  /*프로필 카드의 a태그에 커서 올리면 배경은 흰색 글씨는 검은색*/
+  background-color: white;
+  color: black;
+}

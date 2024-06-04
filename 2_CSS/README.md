@@ -98,3 +98,183 @@ rgba(red(0~255),green(0~255),blue(0~255), alpha(0~1));
 
 - hsla 표기법은 hs1에 불투명도 값을 추가로 지정
 - 색상(hue)은 색상환으로 표시(0~360, 360-빨간색, 120-초록색,240-파란색) -채도(saturation)는 %로 표시 (0%는 회색톤, 100%는 순색) -밝기 (brightness)는 %로 표시 (0%는 가장 어둡고, 100%는 가장 밝다)
+
+# Flex(Flexible Box, Flexbox)
+
+-css 레이아웃 모델로 화면 크기에 따라 레이아웃의 배치나 크기를 조절할 때 편리하게 사용
+
+```html
+<div class="container">
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
+
+## display: flex;
+
+- Flex 컨테이너에 `display : flex;` 적용하면서 시작
+
+```CSS
+.container{
+  display:flex;
+}
+```
+
+## flex-direction (부모한테 걸어야함)
+
+-배치 방향 설정 -아이템들이 배치되는 메인축의 방향을 결정하는 속성
+
+````css
+.container {
+  flex-direction: row / column / row-reverse/ column-reverse;
+}
+-row : 왼쪽부터 순차적으로 배치 
+  -row-reverse : 오른쪽부터 배치
+  -column : 위에서부터 배치 
+  -column-reverse: 아래에서부터 배치
+
+## flex-wrap 
+
+-아이템 줄바꿈을 어떻게 할지 결정하는 속성 
+
+```css
+.container {
+  flex-wrap: nowrap/wrap/wrap-reverse;
+}
+````
+
+-nowarp : 기본값. 줄바꿈을 하지 않음
+-wrap : 줄바꿈
+-wrap-reverse : 역순으로 배치 후 줄바꿈
+
+## flex-flow
+
+-flex-direction과 flex-wrap을 한꺼번에 지정할 수 있는 속성
+
+```css
+.container {
+  flex-flow: flex-direction flex-wrap;
+}
+```
+
+## justify-content
+
+-메인축 방향으로 정렬
+flex-direction의 방향을 기준
+
+```css
+.container {
+  justify-content: flex-start / flex-end/ center / space-between /
+    space-around / space-evenly;
+}
+```
+
+-flex-start : 기본값. 아이템들을 시작점으로 정렬
+-flex-end : 아이템들을 끝점으로 정렬
+-center : 아이템들을 가운데로 정렬
+-space-between : 아이템들 사이에 균일한 간격으로 정렬
+-space-around : 각 아이템의 좌우에 균일한 간격으로 정렬 (각 아이템을 기준으로 양쪽에 공간을 주고 정렬 공간이 겹치는부분있음)
+-space-evenly : 아이템들의 사이와 양 끝에 균일한 간격으로 정렬
+(모든 간격이 균등함)
+
+## align-items
+
+-수직축 방향으로 정렬
+
+```css
+.container {
+  align-items: stretch / flex-start / flex-end/ center/ baseline;
+}
+```
+
+-stretch : 기본값. 아이템들을 브라우저 끝까지 늘림
+-flex-start : 아이템들을 크기대로 바꾸고 위쪽으로 정렬
+-flex-end : 아이템들을 아래쪽으로 정렬
+-center : 아이템들을 가운데 정렬
+-baseline :아이템들을 텍스트 베이스라인 기준으로 정렬
+
+## align-content
+
+-여러 행 정렬 -`flex-wrap: wrap`이 설정된 상태에서, 아이템들의 행이 2줄 이상인경우 수직축 방향 정렬을 결정하는 속성
+
+```css
+.container {
+  align-content: stretch/ flex-start / flex-end / center / space-between /
+    space-around / space-evenly;
+}
+```
+
+## 아이템들에 넣는 속성
+
+## flex-basis
+
+-flex 아이템의 기본 크기 설정 (flex-direction이 row일때는 너비, colum일 때는 높이) 창 줄이면 균등하게 줄어듬
+
+````css
+.item {
+  flex-basis: auto(기본값) / 0 / 크기;
+}
+
+##
+  flex-grow
+  -창을
+  늘렸을때
+  flex-basis의
+  값보다
+  커질
+  수
+  있는지를
+  결정하는
+  속성
+  ```css
+  .item {
+  flex-grow: 0 (기본값) / 숫자;
+}
+````
+
+## flex-shrink
+
+-flex-grow와 쌍을 이루는 속성으로.flex-basis 값보다 작아질 수 있는지를 결정하는 속성
+
+```css
+.item {
+  flex-shrink: 1 (기본값) / 숫자;
+}
+```
+
+## flex
+
+-flex-grow,flex-shrink,flex-basis를 한번에 쓸 수 있는 속성
+
+```css
+.item {
+  flex: 1 1 auto;
+  /*flex-grow:1 ;, flex-shrink:1;, flex-basis:auto ;*/
+  /* 앞에서부터 grow ,shrink ,basis */
+  flex: 1 500px;
+  /*flex-grow:1 ;, flex-shrink:1;, flex-basis:500px;*/
+  flex: 1;
+  /*flex-grow:1 ;, flex-shrink:1;, flex-basis:0%;*/
+}
+```
+
+## align -self
+
+- 특정 아이템만 정렬을 따로 정렬하고자 할 때 사용하는 속성
+
+```css
+.item {
+  align-self: flex-start / flex-end / center / baseline / stretch;
+}
+```
+
+## order
+
+-item 들의 순서를 바꿀 수 있는 속성
+숫자가 커질수록 뒤로감
+
+```css
+.item {
+  order: 0 (기본값) / 숫자;
+}
+```
