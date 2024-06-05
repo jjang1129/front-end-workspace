@@ -1,68 +1,36 @@
-.container {
+.header {
   display: flex;
-  flex-direction: column;
-}
-.Heading1 {
-  background-color: red;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.Heading2 {
-  background-color: purple;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.Heading3 {
-  background-color: yellow;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-h1 {
-  font-size: 40px;
-  font-weight: bold;
-}
-.container2 {
-  background-color: white;
-
-  display: flex;
-}
-.main1 {
-  padding: 10px;
-  font-weight: bold;
-  font-size: 32px;
+  justify-content: space-between;
+  background-color: aqua;
   position: fixed;
-}
-.main2 {
-  padding: 15px;
-  font-weight: bold;
-  font-size: 32px;
+  width: 100%;
+  height: 80px;
   align-items: center;
 }
-.main3 {
-  padding: 15px;
-  font-weight: bold;
-  font-size: 32px;
+.header nav {
+  height: 100%;
+  display: flex;
 }
-.main4 {
+.header nav a {
+  display: flex;
+  align-items: center;
   padding: 15px;
-  font-weight: bold;
-  font-size: 32px;
 }
-.up {
-  width: 95px;
-  height: 95px;
+.header nav a:hover {
   background-color: black;
   color: white;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
+}
+.container {
+  background-color: blueviolet;
+  padding-top: 80px;
+  height: 100vh;
+}
+h2 {
+  background-color: brown;
+}
+ul {
+  background-color: blue;
+}
+li {
+  background-color: beige;
 }

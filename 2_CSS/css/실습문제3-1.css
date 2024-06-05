@@ -1,0 +1,52 @@
+.header {
+  position: fixed; /*fixed는 공중에 띄운거로 인식해서 다른 글씨들이 가려서 안보여서 왼쪽 ->에서 밀어줘야 글씨들이 보임*/
+  background-color: rgba(0, 0, 0, 0.6); /* 255 255 255 0.6 살짝 밝게 */
+  background-blend-mode: color; /*back gorund color 와 img는 같이 못쓰지만 blend mode color 지정하면 같이가능*/
+  background-image: url(../../resources/background.jpg);
+  background-size: cover; /*이미지 잘보이게*/
+  background-position: center; /* 이미지 잘보이게*/
+  height: 100vh;
+  width: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h2 {
+  font-size: 5rem;
+  border-bottom: 2px solid white; /*글자에 밑줄 */
+  padding-bottom: 15px;
+  margin-top: 30px;
+}
+.header nav {
+  margin-bottom: 100px;
+}
+.header a {
+  color: white;
+  display: block;
+  font-size: 1.5rem;
+  margin: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.content {
+  padding-left: 320px; /*위에 설명한 fixed 때문에 밀어 놓음*/
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  /* padding: 20px 20px 20px 320;*/ /* 추가로 오른쪽에도 여백을 넣고 싶으면 이렇게 쓰고 원래쓴 padding은 지우기*/
+}
+.content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.content img {
+  width: 100%;
+  max-width: 500px;
+  align-self: center;
+  margin: 20px;
+}
+.content p {
+  line-height: 1.5;
+}
