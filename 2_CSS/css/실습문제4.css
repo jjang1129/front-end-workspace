@@ -1,8 +1,10 @@
 body {
-  background-color: blue;
   background: linear-gradient(45deg, black, blue);
 
   height: 100vh;
+  /*display: flex ;
+   justify-content : center ;
+   align-items: center ;*/
 }
 .container {
   height: 100%;
@@ -12,33 +14,47 @@ body {
 }
 .square {
   width: 10px;
-  height: 60px;
-  border: 1px white solid;
+  height: 50px;
+
   background-color: white;
-  margin: 2px;
+  margin: 3px;
   border-radius: 26%;
 
-  animation: boxAni 0.7s linear infinite reverse;
+  animation: boxAni 1s linear infinite;
 }
 
 @keyframes boxAni {
   0% {
-    transform: translate(0, 0);
+    transform: scaleY(1);
   }
   50% {
-    transform: translate(0);
+    transform: scaleY(1.8);
   }
   100% {
-    transform: scaleY(2);
+    transform: scaleY(1);
   }
 }
+.square:nth-child(2),
+.square:nth-child(6) {
+  animation-delay: 0.1s;
+}
+.square:nth-child(3),
+.square:nth-child(5) {
+  animation-delay: 0.2s;
+}
 
+.square:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/*
 #square1 {
   animation-delay: 0.1s;
 }
 #square7 {
   animation-delay: 0.1s;
 }
+
 #square2 {
   animation-delay: 0.15s;
 }
@@ -46,12 +62,15 @@ body {
 #square6 {
   animation-delay: 0.15s;
 }
+
 #square3 {
   animation-delay: 0.2s;
 }
+
 #square5 {
   animation-delay: 0.2s;
 }
 #square4 {
-  animation-delay: 0.2s;
+  animation-delay: 0.25s;
 }
+*/
