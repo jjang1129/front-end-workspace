@@ -12,12 +12,18 @@
         Q1. 웹 사이트 관리자는 아이디(id)가 'admin'인 경우라고 가정한다. 다음은 관리자일 경우 '관리자입니다.'를 console에 출력하시오.
      -->
     <script>
-      const id = prompt("아이디를 입력하세요");
-      if (id === "admin") {
+      /* if 문은 실행 코드가 1줄일때는 중괄호 생략하고 바로 옆에 써도 허용 가능*/
+      //const id = prompt("아이디를 입력하세요");
+      /* if (id === "admin") {
         console.log("관리자입니다.");
       } else {
         console.log("오류");
       }
+
+      switch (id) {
+        case "admin":
+          console.log("관리자입니다.");
+      }    */
     </script>
 
     <!-- 
@@ -31,13 +37,24 @@
       } else if (score < 80) {
         console.log("불합격");
       }
+      console.log("----풀이---");
+      //const score1 = prompt("필기 시험 성적");
+      // const score2 = prompt("실기 시험 성적");
+      const score1 = 95;
+      const score2 = 20;
+      if (score1 >= 80 && score2 >= 80) {
+        console.log("합격");
+      } else {
+        console.log("불합격");
+      }
     </script>
 
     <!-- 
         Q3. 어떤 정수가 10과 20의 사이에 있는 수인지를 판별하여 사이에 있다면 '10과 20의 사이에 있습니다'를 출력, 그렇지 않다면 '10과 20의 사이에 있지 않습니다'를 console에 출력하시오.
      -->
     <script>
-      let num = 9;
+      let num = 15;
+      // let num = prompt("정수를 입력하세요");
       if (20 > num && num > 10) {
         console.log("10과 20의 사이에 있습니다");
       } else {
@@ -49,7 +66,7 @@
         Q4. 나이(age)가 65세 이상이거나 8세 미만이면 '입장료는 무료입니다'를 출력, 그렇지 않다면 '입장료는 10,000원입니다'를 console에 출력하시오.
       -->
     <script>
-      let age = 7;
+      let age = prompt("나이를 입력하세요");
       if (age >= 65 || age < 8) {
         console.log("입장료는 무료입니다");
       } else {
@@ -62,17 +79,20 @@
             3 ~ 5월 : 봄, 6 ~ 8월 : 여름, 9 ~ 11월 : 가을, 12 ~ 2월 : 겨울
             예) 12월은 겨울입니다.
      -->
+
     <script>
-      let month = 1;
-      if (5 >= month && month >= 3) {
-        console.log(`${month}월은 봄입니다`);
-      } else if (8 >= month && month >= 6) {
-        console.log(`${month}월은 여름입니다`);
-      } else if (11 >= month && month >= 9) {
-        console.log(`${month}월은 가을입니다`);
-      } else {
-        console.log(`${month}월은 겨울입니다`);
-      }
+      //if 중첩 가능! 주의! 가급적으로 중첩 쓰지 않는것
+      let month = prompt("월입력");
+      if (1 <= month && month <= 12)
+        if (5 >= month && month >= 3) {
+          console.log(`${month}월은 봄입니다`);
+        } else if (8 >= month && month >= 6) {
+          console.log(`${month}월은 여름입니다`);
+        } else if (11 >= month && month >= 9) {
+          console.log(`${month}월은 가을입니다`);
+        } else {
+          console.log(`${month}월은 겨울입니다`);
+        }
     </script>
   </body>
 </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>객체(Object)</h1>
+
+    <!--객체를 만들어야한다-->
+    <script>
+      const person1 = {}; // 배열은 [] , 객체는 {}
+      const person2 = new Object(); // new Object(); 로도 생성 가능!
+
+      console.log(person1);
+      console.log(person2);
+      /* 객체에다가 변수: 속성, 특징 등 추가 */
+      person1.name = "주준영";
+      person1.age = 9;
+      /* 객체에다가 함수: 기능 등 추가 */
+      person1.hello = function () {
+        console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`); // ${this.속성명} 으로 객체가 가지고 있는 속성명을 불러올수있음
+      };
+
+      console.log(person1); // 객체 출력 모든 속성값이 다 나옴
+      console.log(person1.name); // 속성 출력 : 객체명.속성명
+      person1.hello(); // 함수명으로 호출 => console.log(`안녕? 나는 주준영이고, 나이는 9살!`); 실행
+
+      //처음부터 속성과 기능을 만들어서 추가 하는법 {}안에 속성 : 값 , 속성 : 값 , 함수를 넣을 수 있다
+
+      const person3 = {
+        name: "유영민",
+        age: 12,
+        hello: function () {
+          console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+        },
+      };
+      console.log(person3.age);
+      person3.hello();
+
+      //객체 속 키(key) 삭제
+      // 속성과 함수를 삭제할 수 있다
+      delete person3.hello;
+      //person3.hello();  hello라는 함수를 삭제 시킴
+      console.log(person3);
+      /*
+      const 객체명 = {
+        키 : 값, 
+        키 : 값,
+        키 : 값,
+        ....
+      }
+       객체에 추가 & 수정 
+       객체명.키 = 값 ;
+
+       데이터에 접근 
+       객체명.키;  << 속성인 경우 
+       객체명.키(); << 함수인 경우 
+      */
+    </script>
+    <!--객체에는 틀을 만들어야 한다 ex) 사람이 추가 될때 마다 person name age를  추가하는게 귀찮기 때문에  -->
+
+    <!-- 틀만드는법 1 : 생성자 (constructor) 함수로 만드는법-->
+    <script>
+      //함수명의 시작은 원래 소문자이지만 틀을 만들때는 대문자를 쓴다 ex) Person
+      function Person(name, age /*받아낼값들*/) {
+        this.name = name;
+        this.age = age;
+        this.hello = function () {
+          console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+        };
+      }
+
+      const p1 = new Person("윤대훈", 15); // const p1 = new 객체틀명 (이름,나이);
+      console.log(p1);
+
+      const p2 = new Person("최제환", 11);
+      console.log(p2);
+      p2.hello();
+    </script>
+    <!-- 틀만드는법 2 : 클래스로 만드는방법(자바 스크립트에서는 잘안쓰지만 자바에서는 가장많이 쓴다 )-->
+
+    <script>
+      class Person2 {
+        // 생성자 -> 객체를 생성하는 순간 바로 호출 되는애들 함수로 보면 된다                     /* 클래스 함수틀명 { constructor(값,값)         this.값; this.값; } {함수 }
+
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        hello() {
+          console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+        }
+      }
+      const p3 = new Person2("공재욱", 8); // 객체틀로 새로운 객체생성 !
+      console.log(p3);
+      p3.hello();
+    </script>
+  </body>
+</html>
