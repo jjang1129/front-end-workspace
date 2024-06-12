@@ -115,7 +115,9 @@
 
     <script>
       function stringSplit() {
-        const laList = la1.innerHTML.split(",");
+        const laList = la1.innerHTML.split(","); // .innerHTML 해당 태그 내의 html들
+        const div = document.querySelectorAll("h2");
+        console.log(div[1].innerHTML);
         /*
         for (const index in laList) {
           result3.innerHTML += `${Number(index) + 1}.${laList[index]}<br>`;

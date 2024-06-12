@@ -23,11 +23,12 @@ function btn4() {
   const div = document.getElementsByName("testName");
   console.log(div[0]);
 }
-
+// 선택자로 가져오기
 function btn5() {
-  let div = document.querySelector("#testId2"); // 딱 하나만 가져옴
+  let div = document.querySelector("#testId2"); // 아이디가 #tesId2인거 딱 하나만 가져옴
   console.log(div);
-  div = document.querySelectorAll("div");
+  div = document.querySelectorAll("div"); //div 태그 전부다 가져옴 div 태그가 3개 있기 때문에 배열로 리턴 배열 순서는 div태그가 작성된순서 원하는 div를 가져오고 싶다면
+  //div[] 안에 원하는 수를 입력할것
   console.log(div[0]);
 }
 
