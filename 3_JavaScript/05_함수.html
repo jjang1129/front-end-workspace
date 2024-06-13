@@ -58,10 +58,10 @@
     <!-- 익명 함수 -->
     <!--const 함수명 =function (매개변수) {return 결과값;}-->
     <script>
-      const minus = function (a, b) {
-        return a - b;
+      const minus = function (a, b, c) {
+        return a - b - c;
       };
-      console.log(minus(70, 30)); //40
+      console.log(minus(70, 30, 20)); //40
     </script>
     <!--화살표 함수-->
     <script>
@@ -98,7 +98,7 @@
       // 배열.reduce((누적된값,값,인덱스,배열)=>{}초기값);
       const result3 = arr.reduce(function (acc, value) {
         return acc + value;
-      }, 2);
+      });
       console.log(result3);
     </script>
   </body>

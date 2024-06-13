@@ -29,7 +29,7 @@ function btn5() {
   console.log(div);
   div = document.querySelectorAll("div"); //div 태그 전부다 가져옴 div 태그가 3개 있기 때문에 배열로 리턴 배열 순서는 div태그가 작성된순서 원하는 div를 가져오고 싶다면
   //div[] 안에 원하는 수를 입력할것
-  console.log(div[0]);
+  console.log(div[0]); // 가장 첫번쨰 div 태그가 출력됨
 }
 
 function btn6() {

@@ -53,17 +53,43 @@
     <!-- Q6. 배열 안의 데이터를 모두 2배로 만들어서 출력하세요 -->
     <script>
       const nums2 = [1, 3, 5];
+
+      const number2 = nums2.map((x) => x * 2);
+
+      console.log(number2);
+
+      const nums22 = nums2.map(function (nums2) {
+        return nums2 * 2;
+      });
+
+      console.log(nums22);
     </script>
 
     <!-- Q7. 배열에 있는 데이터들로 합계와 평균을 출력하세요 -->
     <script>
       const nums3 = [90, 85, 70, 86, 97];
+
+      const avv = nums3.reduce((a, b) => {
+        return a + b;
+      }, 0);
+      console.log(avv);
+      console.log(avv / nums3.length);
     </script>
 
     <!-- Q8. 두 배열의 각 데이터의 곱셈을 한 데이터들로 이루어진 새로운 배열을 생성하여 출력하세요 -->
     <script>
       const a1 = [12, 0, 2, 5, 4];
       const b1 = [5, 15, 6, 7, 8];
+
+      ab1 = a1.map(function (a1, y) {
+        return a1 + b1[y];
+      });
+      console.log(ab1);
+
+      /*const [a, b, c, d, e] = a1;
+      const [f, g, h, j, k] = b1;
+      const ab = [a * f, b * g, c * h, d * j, e * k];
+      console.log(ab);*/
     </script>
 
     <!-- Q9. 두 배열의 데이터 값이 서로 같은 데이터들만 이루어진 새로운 배열을 생성하여 출력하세요
@@ -73,6 +99,9 @@
       const a2 = [12, 0, 2, 5, 4];
       const b2 = [0, 2, 3, 12, 8];
       const c2 = [];
+
+      const c3 = a2.filter((a) => b2.includes(a)); // 두 배열의 같은 데이터로 배열 만들기 외워
+      console.log(c3);
     </script>
 
     <!-- Q10. 2차원 배열에는 3명의 학생의 4과목 성적이 들어 있습니다. 각 학생들의 합계와 평균을 출력하세요 -->
@@ -82,6 +111,13 @@
         [87, 93, 62, 83],
         [98, 90, 77, 97],
       ];
+
+      const scores1 = scores[1];
+      console.log(scores1);
+      const avv1 = scores1.reduce((a, b) => {
+        return a + b;
+      });
+      console.log(avv1);
     </script>
   </body>
 </html>
