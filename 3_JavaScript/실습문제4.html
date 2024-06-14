@@ -43,10 +43,11 @@
               2, 3, 5, 7
     -->
     <script>
-      for (let i = 1; i <= 3; i++) {
-        for (let j = 1; j <= 9; j++) {
-          console.log(i * j);
+      next: for (let i = 2; i <= 10; i++) {
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) continue next;
         }
+        console.log(i);
       }
     </script>
 
@@ -112,12 +113,26 @@
         [98, 90, 77, 97],
       ];
 
-      const scores1 = scores[1];
+      const scores1 = scores[0];
       console.log(scores1);
       const avv1 = scores1.reduce((a, b) => {
         return a + b;
       });
       console.log(avv1);
+      console.log(avv1 / scores1.length);
+      const scores2 = scores[1];
+      console.log[scores2];
+      const avv2 = scores2.reduce((a, b) => {
+        return a + b;
+      });
+      console.log(avv2);
+      console.log(avv2 / scores2.length);
+      const scores3 = scores[2];
+      const avv3 = scores3.reduce((a, b) => {
+        return a + b;
+      });
+      console.log(avv3);
+      console.log(avv3 / scores3.length);
     </script>
   </body>
 </html>

@@ -1,36 +1,7 @@
-.header {
+header {
   display: flex;
   justify-content: space-between;
-  background-color: aqua;
+  height: 60px;
   position: fixed;
   width: 100%;
-  height: 80px;
-  align-items: center;
-}
-.header nav {
-  height: 100%;
-  display: flex;
-}
-.header nav a {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-}
-.header nav a:hover {
-  background-color: black;
-  color: white;
-}
-.container {
-  background-color: blueviolet;
-  padding-top: 80px;
-  height: 100vh;
-}
-h2 {
-  background-color: brown;
-}
-ul {
-  background-color: blue;
-}
-li {
-  background-color: beige;
 }
