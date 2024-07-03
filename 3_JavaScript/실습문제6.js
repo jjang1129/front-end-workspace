@@ -17,3 +17,7 @@ function result2() {
 
 result2();
 setInterval(result2, 1000);
+
+let answer = [];
+answer[0] = 1;
+console.log(answer);

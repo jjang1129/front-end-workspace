@@ -107,3 +107,23 @@ console.log(userPwdspan.innerHTML.length);
 if (userPwdspan.innerHTML === `OK!`) {
   console.log(2);
 }
+
+function solution(numer1, denom1, numer2, denom2) {
+  var answer = [
+    (numer1 * denom2 + numer2 * denom1) / i1,
+    (denom1 * denom2) / i1,
+  ];
+
+  let gcd = 1;
+  let i1;
+
+  for (i1 = 1; math.min(numer1, numer2); i1++) {
+    if (numer1 % i1 == 0 && numer2 % i1 == 0) {
+      gcd = i1;
+    }
+  }
+
+  return answer;
+}
+
+console.log(solution(1, 2, 2, 3));

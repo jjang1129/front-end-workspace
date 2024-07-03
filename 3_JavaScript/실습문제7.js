@@ -73,3 +73,19 @@ function restartHandler() {
 
 click.addEventListener("click", clickHandler);
 restart.addEventListener("click", restartHandler);
+let answer = [];
+
+for (let i = 0; i <= 100; i++) {
+  {
+    answer[i] = i * 2 + 1;
+  }
+}
+console.log(answer);
+
+answer[0] = 1;
+answer[1] = 3;
+answer[2] = 5;
+answer[3] = 7;
+answer[0] = 9;
+answer[0] = 11;
+answer[0] = 13;
