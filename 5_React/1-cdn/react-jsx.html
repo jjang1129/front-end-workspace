@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--리액트 스크립트 2개 바벨 스크립트 1개 추가!-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- JSX(JavaScript Syntax eXtension)-->
+    <div id="root"></div>
+    <!--바벨을 통해 변환해줘야 그려줄수있음 !-->
+
+    <script type="text/babel">
+      let count = 0;
+      const setCount = () => {
+        count++;
+
+        ReactDOM.render(<Container />, root);
+      };
+
+      // 함수를 호출하면 이 태그들을 그리겠다
+      const Container = () => {
+        return (
+          <div>
+            <h1> Total Clicks : {count}</h1>
+            <button onClick={setCount}>Click! </button>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Container />, root);
+    </script>
+
+    <script>
+      export default { Container };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calendar</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <p class="start" style="display: none"></p>
+    <p class="end" style="display: none"></p>
+    <div class="calendar">
+      <div class="header">
+        <button id="prevMonth">&lt;</button>
+        <div class="month-year" id="monthYear"></div>
+        <button id="nextMonth">&gt;</button>
+      </div>
+      <div class="days">
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+      </div>
+      <div class="dates" id="dates"></div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
